@@ -66,7 +66,7 @@ namespace QuotesWebApp.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,QuoteText,QuoteAuthor")] Quote quote)
+        public async Task<IActionResult> Create([Bind("Id,QuoteText,QuoteDetails")] Quote quote)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +100,7 @@ namespace QuotesWebApp.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,QuoteText,QuoteAuthor")] Quote quote)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,QuoteText,QuoteDetails")] Quote quote)
         {
             if (id != quote.Id)
             {

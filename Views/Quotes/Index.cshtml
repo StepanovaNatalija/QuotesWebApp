@@ -16,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.QuoteText)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.QuoteAuthor)
+                @Html.DisplayNameFor(model => model.QuoteDetails)
             </th>
             <th></th>
         </tr>
@@ -28,7 +28,7 @@
                 @Html.DisplayFor(modelItem => item.QuoteText)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.QuoteAuthor)
+                @Html.DisplayFor(modelItem => item.QuoteDetails)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
