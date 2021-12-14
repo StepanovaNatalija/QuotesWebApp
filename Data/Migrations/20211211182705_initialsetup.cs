@@ -13,7 +13,7 @@ namespace QuotesWebApp.Data.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     QuoteText = table.Column<string>(nullable: true),
-                    QuoteDetails = table.Column<string>(nullable: true)
+                    QuoteAuthor = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
