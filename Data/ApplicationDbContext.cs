@@ -13,6 +13,6 @@ namespace QuotesWebApp.Data
             : base(options)
         {
         }
-        public DbSet<QuotesWebApp.Models.Quote> Quote { get; set; }
+        public DbSet<QuotesWebApp.Models.QuoteModel> Quote { get; set; }
     }
 }

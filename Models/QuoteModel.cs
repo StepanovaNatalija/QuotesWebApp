@@ -2,13 +2,13 @@
 
 namespace QuotesWebApp.Models
 {
-    public class Quote
+    public class QuoteModel
     {
         public int Id { get; set; }
         public string QuoteText { get; set; }
         public string QuoteAuthor { get; set; }
 
-        public Quote()
+        public QuoteModel()
         {
 
         }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<QuotesWebApp.Models.Quote>
+﻿@model IEnumerable<QuotesWebApp.Models.QuoteModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -19,6 +19,8 @@
                 @Html.DisplayNameFor(model => model.QuoteAuthor)
             </th>
             <th></th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -31,8 +33,12 @@
                 @Html.DisplayFor(modelItem => item.QuoteAuthor)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+            </td>
+            <td>
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
