@@ -72,6 +72,7 @@ namespace QuotesWebApp.Controllers
             {
                 _context.Add(quote);
                 await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Created Successfully";
                 return RedirectToAction(nameof(Index));
             }
             return View(quote);
@@ -113,6 +114,7 @@ namespace QuotesWebApp.Controllers
                 {
                     _context.Update(quote);
                     await _context.SaveChangesAsync();
+                    
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -125,9 +127,12 @@ namespace QuotesWebApp.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(quote);
+                
+                TempData["SuccessMessage"] = "Edited Successfully";
+                return RedirectToAction(nameof(Index));                
+            }  
+            
+            return View(quote);           
         }
 
         // GET: Quotes/Delete/5
@@ -159,6 +164,7 @@ namespace QuotesWebApp.Controllers
             var quote = await _context.Quote.FindAsync(id);
             _context.Quote.Remove(quote);
             await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Deleted Successfully";
             return RedirectToAction(nameof(Index));
         }
 
