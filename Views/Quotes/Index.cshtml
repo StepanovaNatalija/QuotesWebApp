@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Post a Quote</a>
 </p>
-<table class="table table-hover table-bordered">
+<table class="table table-hover">
     <thead class="thead-dark">
         <tr>
             <th>
@@ -18,8 +18,7 @@
             <th>
                 @Html.DisplayName("Author")
             </th>
-            <th>
-            </th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -35,12 +34,15 @@
             @*<td>
             <a asp-action="Details" asp-route-id="@item.Id">Details</a>
         </td>*@
-        <td>
-            &nbsp; &nbsp;
-            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-            &nbsp; &nbsp;
-            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-        </td>
+            
+            <td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                  <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+
+                  <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                }
+            </td>
         </tr>
         }
     </tbody>
