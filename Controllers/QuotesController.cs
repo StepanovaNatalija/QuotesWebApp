@@ -72,7 +72,7 @@ namespace QuotesWebApp.Controllers
             {
                 _context.Add(quote);
                 await _context.SaveChangesAsync();
-                TempData["SuccessMessage"] = "Created Successfully";
+                TempData["SuccessMessage"] = "Posted Successfully";
                 return RedirectToAction(nameof(Index));
             }
             return View(quote);
